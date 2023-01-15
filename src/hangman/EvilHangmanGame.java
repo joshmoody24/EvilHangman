@@ -91,7 +91,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
         return largestSet;
     }
 
-    private String getHashCode(String word, char guess){
+    public static String getHashCode(String word, char guess){
         StringBuilder builder = new StringBuilder();
         for(char c : word.toCharArray()){
             if(c == guess) builder.append(c);
@@ -100,7 +100,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
         return builder.toString();
     }
 
-    private int countLetters(String word){
+    private static int countLetters(String word){
         int sum = 0;
         for (char c : word.toCharArray()){
             if(Character.isLetter(c)){
@@ -110,7 +110,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
         return sum;
     }
 
-    private int rightmostLetter(String word){
+    private static int rightmostLetter(String word){
         int index = 0;
         for (int i = 0; i < word.length(); i++){
             if(Character.isLetter(word.charAt(i))){
